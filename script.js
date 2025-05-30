@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Image hover/focus for .clove-why-item
   const whyItems = document.querySelectorAll('.clove-why-item[data-img]');
   const mainImg = document.getElementById('cloveWhyMainImg');
   whyItems.forEach(item => {
@@ -11,12 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Accordion for .clove-why-item
   document.querySelectorAll('.clove-why-item').forEach(item => {
     const question = item.querySelector('.clove-why-question');
     if (question) {
       question.addEventListener('click', () => {
-        // Collapse others
         document.querySelectorAll('.clove-why-item').forEach(i => {
           if (i !== item) i.classList.remove('open');
         });
@@ -25,10 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // FAQ Accordion
   document.querySelectorAll('.faqsec-item').forEach(item => {
     item.addEventListener('click', () => {
-      // Collapse others
       document.querySelectorAll('.faqsec-item').forEach(i => {
         if (i !== item) i.classList.remove('open');
       });
@@ -36,11 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Simple form validation for all forms
   document.querySelectorAll('form').forEach(form => {
     form.addEventListener('submit', function (e) {
       let valid = true;
-      // Check required inputs
       form.querySelectorAll('input[required], textarea[required]').forEach(input => {
         if (input.type === 'checkbox' && !input.checked) valid = false;
         if ((input.type === 'text' || input.type === 'tel' || input.type === 'email') && !input.value.trim()) valid = false;
@@ -53,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// --- Why Choose Clove Dental: Image Hover & Accordion ---
 document.querySelectorAll('.clove-why-question').forEach(function(question) {
     question.addEventListener('click', function() {
         var parent = question.closest('.clove-why-item');
